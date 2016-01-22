@@ -21,3 +21,6 @@ This script serves as an example of using the following techniques:
 * Mapping with ggplot2
 * Caching data in files to avoid redoing slower steps if re-running script
 
+Data source information: 
+
+https://fortress.wa.gov/agr/gis/wsdagis/rest/services/NRAS/2014CropDistribution/MapServer/info/iteminfo

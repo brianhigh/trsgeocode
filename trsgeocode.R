@@ -37,7 +37,7 @@ for (pkg in c("RJSONIO", "XML", "httr", "plyr", "dplyr",
 # Function Definitions
 # ----------------------------------------------------------------------
 
-getCropData <- function(data_file) {
+getData <- function(data_file) {
     # Get crop data from WSDA 2014 ArcGIS REST service.
     # Note: This data is shown on this map: http://arcg.is/1QhDoo2
     
@@ -48,9 +48,13 @@ getCropData <- function(data_file) {
                  sep="")
     
     # Fetch JSON data and import it into a data frame
-    jsonCrop <- fromJSON(content(GET(url), "text"))
-    featuresCrop <- jsonCrop[['features']]
-    crop <- data.frame(adply(lapply(featuresCrop, function(x) {
+    json <- GET(url)
+    jsonContent <- content(json, "text")
+    write(jsonContent, "crop.json")
+    
+    cropData <- fromJSON(jsonContent)
+    cropFeatures <- cropData[['features']]
+    crop <- data.frame(adply(lapply(cropFeatures, function(x) {
         data.frame(acres=x$attributes$ExactAcres, trscode=x$attributes$TRS,
                    stringsAsFactors=FALSE)}), 1)[-1])
     
@@ -59,12 +63,12 @@ getCropData <- function(data_file) {
     # as provided by Anika Larsen (orig. from Perry Beale via Eddie Kasner).
     # This is to confirm that this procedure produces the same results.
     options(digits=12)
-    groupedCrop <- group_by(crop, trscode)
-    CropData <- summarise(groupedCrop, 
-                             "CropData(acres)"=signif(sum(acres), 10))
-    CropData <- arrange(CropData, trscode)
-    write.csv(CropData, data_file, quote=FALSE, row.names=FALSE)
-    return(CropData)
+    cropGrouped <- group_by(crop, trscode)
+    Data <- summarise(cropGrouped, 
+                             "acres"=signif(sum(acres), 10))
+    Data <- arrange(Data, trscode)
+    write.csv(Data, data_file, quote=FALSE, row.names=FALSE)
+    return(Data)
 }
 
 ## Function html2txt decodes HTML-encoded strings
@@ -145,13 +149,13 @@ getCropLatLong <- function(dataRow) {
     
     # Return only the original values if unable to geocode
     if (length(latlong) > 0 && is.na(latlong) == TRUE) {
-        return(data.frame(acres=dataRow$CropData, trscode=dataRow$trscode,
+        return(data.frame(acres=dataRow$Data, trscode=dataRow$trscode,
                           row.names=NULL))
     }
     
     point <- latlong[[1]]
     polygon <- latlong[[2]]
-    result <- data.frame(acres=dataRow$CropData, trscode=dataRow$trscode,
+    result <- data.frame(acres=dataRow$Data, trscode=dataRow$trscode,
                          point.lat=point['lat'], point.lon=point['lon'],
                          polygon=polygon, row.names=NULL)
     return(result)
@@ -162,36 +166,35 @@ getCropLatLong <- function(dataRow) {
 # ----------------------------------------------------------------------
 
 # Read crop data from a CSV, if present
-processed_file <- "ProcessedCropDataFromREST.csv"
+processed_file <- "GeocodedDataFromREST.csv"
 
 if (! file.exists(processed_file)) {
     # Read in summarized crop data
-    data_file <- "CropDataFromREST.csv"
+    data_file <- "DataFromREST.csv"
     if (! file.exists(data_file)) {
-        CropData <- getCropData(data_file)
+        Data <- getData(data_file)
     } else {
-        CropData <- read.csv(data_file, stringsAsFactors=FALSE, header=TRUE)
+        Data <- read.csv(data_file, stringsAsFactors=FALSE, header=TRUE)
     }
 
     # Geocode crop data
-    ProcessedCropData <- adply(CropData, 1, getCropLatLong)
+    GeocodedData <- adply(Data, 1, getCropLatLong)
     
     # Remove duplicated first column
-    ProcessedCropData <- ProcessedCropData[,-1]
+    GeocodedData <- GeocodedData[,-1]
     
     # Remove incomplete cases (those cases containing NAs)
-    ProcessedCropData <- 
-        ProcessedCropData[complete.cases(ProcessedCropData),]
+    GeocodedData <- GeocodedData[complete.cases(GeocodedData),]
     
     # Save as CSV for later use
-    write.csv(ProcessedCropData, processed_file, row.names=FALSE)
+    write.csv(GeocodedData, processed_file, row.names=FALSE)
 } else {
     # Read in CSV containing the geocoded crop data
-    ProcessedCropData <- read.csv(processed_file)
+    GeocodedData <- read.csv(processed_file)
 }
 
 # Group by trscode for mapping
-ProcessedCropData <- group_by(ProcessedCropData, trscode)
+GeocodedData <- group_by(GeocodedData, trscode)
 
 # Create a theme with no border, grid, axis, etc.
 # From: http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html
@@ -221,10 +224,10 @@ cnames <- aggregate(cbind(long, lat) ~ subregion, data=wa_county,
                     FUN=function(x)mean(range(x)))
 
 # Find the coordinates of map boundaries, zoomed in for points of interest
-max.lat <- round(max(ProcessedCropData$point.lat, na.rm = TRUE), 2)
-min.lat <- round(min(ProcessedCropData$point.lat, na.rm = TRUE), 2)
-max.lon <- round(max(ProcessedCropData$point.lon, na.rm = TRUE), 2)
-min.lon <- round(min(ProcessedCropData$point.lon, na.rm = TRUE), 2)
+max.lat <- round(max(GeocodedData$point.lat, na.rm = TRUE), 2)
+min.lat <- round(min(GeocodedData$point.lat, na.rm = TRUE), 2)
+max.lon <- round(max(GeocodedData$point.lon, na.rm = TRUE), 2)
+min.lon <- round(min(GeocodedData$point.lon, na.rm = TRUE), 2)
 max.lat <- max.lat + ((max.lat - min.lat) / 4)
 min.lat <- min.lat - ((max.lat - min.lat) / 4)
 max.lon <- max.lon + ((max.lon - min.lon) / 4)
@@ -233,7 +236,7 @@ min.lon <- min.lon - ((max.lon - min.lon) / 4)
 # Plot the map, zooming in on township sections, with county names
 g <- wa_base + theme_bw() + ditch_the_axes + 
      geom_polygon(data = wa_county, fill=NA, color="grey") +
-     geom_polygon(data = ProcessedCropData,
+     geom_polygon(data = GeocodedData,
                  aes(x=polygon.lon, y=polygon.lat, 
                      group=trscode, fill=acres)) +
      geom_text(data=cnames, size=4, color="darkgrey",
