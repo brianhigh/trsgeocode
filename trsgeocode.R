@@ -198,9 +198,16 @@ getCropLatLong <- function(dataRow) {
         return(data.frame(acres=dataRow$acres, trscode=dataRow$trscode,
                           row.names=NULL))
     }
-    
+
+    # Return only the original values if point or polygon is unusable
     point <- latlong[[1]]
     polygon <- latlong[[2]]
+    if (length(point) < 2 || nrow(polygon) < 5) {
+        print(paste("Can't use point or polygon for", dataRow$trscode, "!"))
+        return(data.frame(acres=dataRow$acres, trscode=dataRow$trscode,
+                          row.names=NULL))
+    }
+    
     result <- data.frame(acres=dataRow$acres, trscode=dataRow$trscode,
                          point.lat=point['lat'], point.lon=point['lon'],
                          polygon=polygon, row.names=NULL)
