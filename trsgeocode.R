@@ -149,13 +149,13 @@ getCropLatLong <- function(dataRow) {
     
     # Return only the original values if unable to geocode
     if (length(latlong) > 0 && is.na(latlong) == TRUE) {
-        return(data.frame(acres=dataRow$Data, trscode=dataRow$trscode,
+        return(data.frame(acres=dataRow$acres, trscode=dataRow$trscode,
                           row.names=NULL))
     }
     
     point <- latlong[[1]]
     polygon <- latlong[[2]]
-    result <- data.frame(acres=dataRow$Data, trscode=dataRow$trscode,
+    result <- data.frame(acres=dataRow$acres, trscode=dataRow$trscode,
                          point.lat=point['lat'], point.lon=point['lon'],
                          polygon=polygon, row.names=NULL)
     return(result)
@@ -172,16 +172,13 @@ if (! file.exists(processed_file)) {
     # Read in summarized crop data
     data_file <- "DataFromREST.csv"
     if (! file.exists(data_file)) {
-        Data <- getData(data_file)
+        cropData <- getData(data_file)
     } else {
-        Data <- read.csv(data_file, stringsAsFactors=FALSE, header=TRUE)
+        cropData <- read.csv(data_file, stringsAsFactors=FALSE, header=TRUE)
     }
 
-    # Geocode crop data
-    GeocodedData <- adply(Data, 1, getCropLatLong)
-    
-    # Remove duplicated first column
-    GeocodedData <- GeocodedData[,-1]
+    # Geocode crop data; .margins=1 means "split up by rows".
+    GeocodedData <- adply(.data=cropData, .margins=1, .fun=getCropLatLong)
     
     # Remove incomplete cases (those cases containing NAs)
     GeocodedData <- GeocodedData[complete.cases(GeocodedData),]
