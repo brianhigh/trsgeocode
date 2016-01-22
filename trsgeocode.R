@@ -175,6 +175,7 @@ getLatLong <- function(trscode) {
     
     # Extract the point coordinates into a vector
     point <- as.numeric(unlist(strsplit(decoded[15], " ")))
+    if (length(point) != 2) return(NA)
     names(point) <- c("lon", "lat")
     point <- point[c("lat", "lon")]
     
@@ -193,7 +194,8 @@ getCropLatLong <- function(dataRow) {
     latlong <- getLatLong(dataRow$trscode)
     
     # Return only the original values if unable to geocode
-    if (length(latlong) || length(latlong) > 0 && is.na(latlong) == TRUE) {
+    if (length(latlong) == 0 || 
+        (length(latlong) > 0 && is.na(latlong)) == TRUE) {
         print(paste("Can't geocode", dataRow$trscode, "!"))
         return(data.frame(acres=dataRow$acres, trscode=dataRow$trscode,
                           row.names=NULL))
@@ -258,7 +260,7 @@ states <- map_data("state")
 wa_df <- subset(states, region == "washington")
 wa_base <- ggplot(data=wa_df,
                   mapping = aes(x=long, y=lat, group=group)) + 
-                  geom_polygon(color="white", fill="#666666")
+                  geom_polygon(color="white", fill="#444444")
 
 # Get county coordinates for Washington State
 counties <- map_data("county")
