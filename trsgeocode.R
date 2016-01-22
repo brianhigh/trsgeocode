@@ -28,8 +28,6 @@ rm(list=ls())
 
 # Select the crop type to plot. If you change this, set use.cache to FALSE.
 # (Available crop type names may be found in field_codes.csv.)
-# Note: If there are more than about 500 township sections to geocode, 
-# then geocoding is likely to fail with an error. (Need a work-around.)
 cropType <- "Alfalfa Seed"
 
 # Use data file cache (TRUE) or recreate files even if they exist (FALSE).
