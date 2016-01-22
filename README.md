@@ -11,7 +11,8 @@ License: GNU GPL v3 http://www.gnu.org/licenses/gpl.txt
 
 This script serves as an example of using the following techniques:
 
-* Querying an ArcGIS REST API using a URL with a "GET" query string
+* Querying an ArcGIS REST API using SQL-like syntax
+* Using a URL with a "GET" query string to fetch data
 * Importing data in JSON format 
 * Geocoding TRS codes using the BLM web service API
 * Importing data in XML format

@@ -6,7 +6,8 @@
 #
 # This script serves as an example of using the following techniques:
 #
-# * Querying an ArcGIS REST API using a URL with a "GET" query string
+# * Querying an ArcGIS REST API using SQL-like syntax
+# * Using a URL with a "GET" query string to fetch data
 # * Importing data in JSON format 
 # * Geocoding TRS codes using the BLM web service API
 # * Importing data in XML format
@@ -36,34 +37,34 @@ for (pkg in c("RJSONIO", "XML", "httr", "plyr", "dplyr",
 # Function Definitions
 # ----------------------------------------------------------------------
 
-getAlfalfaData <- function(data_file) {
-    # Get alfalfa seed crop data from WSDA 2014 ArcGIS REST service.
+getCropData <- function(data_file) {
+    # Get crop data from WSDA 2014 ArcGIS REST service.
     # Note: This data is shown on this map: http://arcg.is/1QhDoo2
     
-    # Get alfalfa seed crop data. Search terms: CropType=1501.
+    # Get crop data. Search terms: CropType=1501. ("Alfalfa Seed")
     url <- paste("https://fortress.wa.gov/agr/gis/wsdagis/rest/services/NRAS/",
                  "2014CropDistribution/MapServer/1/query?",
                  "where=CropType+%3D+1501&outFields=TRS%2C+ExactAcres&f=pjson",
                  sep="")
     
     # Fetch JSON data and import it into a data frame
-    jsonAlf <- fromJSON(content(GET(url), "text"))
-    featuresAlf <- jsonAlf[['features']]
-    alf <- data.frame(adply(lapply(featuresAlf, function(x) {
+    jsonCrop <- fromJSON(content(GET(url), "text"))
+    featuresCrop <- jsonCrop[['features']]
+    crop <- data.frame(adply(lapply(featuresCrop, function(x) {
         data.frame(acres=x$attributes$ExactAcres, trscode=x$attributes$TRS,
                    stringsAsFactors=FALSE)}), 1)[-1])
     
-    # Summarize by trscode to get total acres of alfalfa seed crops per TRS.
+    # Summarize by trscode to get total acres of chosen crop type per TRS.
     # Use 12 digits and 10 significant figures to reproduce original data set
     # as provided by Anika Larsen (orig. from Perry Beale via Eddie Kasner).
     # This is to confirm that this procedure produces the same results.
     options(digits=12)
-    groupedAlf <- group_by(alf, trscode)
-    AlfalfaSeed <- summarise(groupedAlf, 
-                             "alfalfaseed(acres)"=signif(sum(acres), 10))
-    AlfalfaSeed <- arrange(AlfalfaSeed, trscode)
-    write.csv(AlfalfaSeed, data_file, quote=FALSE, row.names=FALSE)
-    return(AlfalfaSeed)
+    groupedCrop <- group_by(crop, trscode)
+    CropData <- summarise(groupedCrop, 
+                             "CropData(acres)"=signif(sum(acres), 10))
+    CropData <- arrange(CropData, trscode)
+    write.csv(CropData, data_file, quote=FALSE, row.names=FALSE)
+    return(CropData)
 }
 
 ## Function html2txt decodes HTML-encoded strings
@@ -138,19 +139,19 @@ getLatLong <- function(trscode) {
     return(list(point=point, polygon=polygon))
 }
 
-## Function getAlfalfaLatLong gets lat and long for a row in Alfalfa dataframe
-getAlfalfaLatLong <- function(dataRow) {
+## Function getCropLatLong gets lat and long for a row in crop dataframe
+getCropLatLong <- function(dataRow) {
     latlong <- getLatLong(dataRow$trscode)
     
     # Return only the original values if unable to geocode
     if (length(latlong) > 0 && is.na(latlong) == TRUE) {
-        return(data.frame(acres=dataRow$alfalfaseed, trscode=dataRow$trscode,
+        return(data.frame(acres=dataRow$CropData, trscode=dataRow$trscode,
                           row.names=NULL))
     }
     
     point <- latlong[[1]]
     polygon <- latlong[[2]]
-    result <- data.frame(acres=dataRow$alfalfaseed, trscode=dataRow$trscode,
+    result <- data.frame(acres=dataRow$CropData, trscode=dataRow$trscode,
                          point.lat=point['lat'], point.lon=point['lon'],
                          polygon=polygon, row.names=NULL)
     return(result)
@@ -160,37 +161,37 @@ getAlfalfaLatLong <- function(dataRow) {
 # Main Routine
 # ----------------------------------------------------------------------
 
-# Read alfalfa data from a CSV, if present
-processed_file <- "ProcessedAlfalfaSeedFromREST.csv"
+# Read crop data from a CSV, if present
+processed_file <- "ProcessedCropDataFromREST.csv"
 
 if (! file.exists(processed_file)) {
-    # Read in summarized alfalfa seed crop data
-    data_file <- "AlfalfaSeedFromREST.csv"
+    # Read in summarized crop data
+    data_file <- "CropDataFromREST.csv"
     if (! file.exists(data_file)) {
-        AlfalfaSeed <- getAlfalfaData(data_file)
+        CropData <- getCropData(data_file)
     } else {
-        AlfalfaSeed <- read.csv(data_file, stringsAsFactors=FALSE, header=TRUE)
+        CropData <- read.csv(data_file, stringsAsFactors=FALSE, header=TRUE)
     }
 
-    # Geocode alfalfa data
-    ProcessedAlfalfaSeed <- adply(AlfalfaSeed, 1, getAlfalfaLatLong)
+    # Geocode crop data
+    ProcessedCropData <- adply(CropData, 1, getCropLatLong)
     
     # Remove duplicated first column
-    ProcessedAlfalfaSeed <- ProcessedAlfalfaSeed[,-1]
+    ProcessedCropData <- ProcessedCropData[,-1]
     
     # Remove incomplete cases (those cases containing NAs)
-    ProcessedAlfalfaSeed <- 
-        ProcessedAlfalfaSeed[complete.cases(ProcessedAlfalfaSeed),]
+    ProcessedCropData <- 
+        ProcessedCropData[complete.cases(ProcessedCropData),]
     
     # Save as CSV for later use
-    write.csv(ProcessedAlfalfaSeed, processed_file, row.names=FALSE)
+    write.csv(ProcessedCropData, processed_file, row.names=FALSE)
 } else {
-    # Read in CSV containing the geocoded alfalfa data
-    ProcessedAlfalfaSeed <- read.csv(processed_file)
+    # Read in CSV containing the geocoded crop data
+    ProcessedCropData <- read.csv(processed_file)
 }
 
 # Group by trscode for mapping
-ProcessedAlfalfaSeed <- group_by(ProcessedAlfalfaSeed, trscode)
+ProcessedCropData <- group_by(ProcessedCropData, trscode)
 
 # Create a theme with no border, grid, axis, etc.
 # From: http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html
@@ -220,10 +221,10 @@ cnames <- aggregate(cbind(long, lat) ~ subregion, data=wa_county,
                     FUN=function(x)mean(range(x)))
 
 # Find the coordinates of map boundaries, zoomed in for points of interest
-max.lat <- round(max(ProcessedAlfalfaSeed$point.lat, na.rm = TRUE), 2)
-min.lat <- round(min(ProcessedAlfalfaSeed$point.lat, na.rm = TRUE), 2)
-max.lon <- round(max(ProcessedAlfalfaSeed$point.lon, na.rm = TRUE), 2)
-min.lon <- round(min(ProcessedAlfalfaSeed$point.lon, na.rm = TRUE), 2)
+max.lat <- round(max(ProcessedCropData$point.lat, na.rm = TRUE), 2)
+min.lat <- round(min(ProcessedCropData$point.lat, na.rm = TRUE), 2)
+max.lon <- round(max(ProcessedCropData$point.lon, na.rm = TRUE), 2)
+min.lon <- round(min(ProcessedCropData$point.lon, na.rm = TRUE), 2)
 max.lat <- max.lat + ((max.lat - min.lat) / 4)
 min.lat <- min.lat - ((max.lat - min.lat) / 4)
 max.lon <- max.lon + ((max.lon - min.lon) / 4)
@@ -232,7 +233,7 @@ min.lon <- min.lon - ((max.lon - min.lon) / 4)
 # Plot the map, zooming in on township sections, with county names
 g <- wa_base + theme_bw() + ditch_the_axes + 
      geom_polygon(data = wa_county, fill=NA, color="grey") +
-     geom_polygon(data = ProcessedAlfalfaSeed,
+     geom_polygon(data = ProcessedCropData,
                  aes(x=polygon.lon, y=polygon.lat, 
                      group=trscode, fill=acres)) +
      geom_text(data=cnames, size=4, color="darkgrey",
