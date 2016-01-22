@@ -21,6 +21,9 @@
 # Clear R's workspace memory to start with a fresh workspace.
 rm(list=ls())
 
+# Initialize variables
+cropType <- "Alfalfa Seed"
+
 ## Install packages and load into memory
 for (pkg in c("RJSONIO", "XML", "httr", "plyr", "dplyr", 
               "maps", "mapdata", "ggplot2")) {
@@ -37,14 +40,27 @@ for (pkg in c("RJSONIO", "XML", "httr", "plyr", "dplyr",
 # Function Definitions
 # ----------------------------------------------------------------------
 
+## Function getData fetches the JSON data from the REST service
 getData <- function(data_file) {
     # Get crop data from WSDA 2014 ArcGIS REST service.
     # Note: This data is shown on this map: http://arcg.is/1QhDoo2
     
-    # Get crop data. Search terms: CropType=1501. ("Alfalfa Seed")
+    # Get 2014 Crop Distribution CropType codes (for reference), since
+    # you can't search by CropType name, but only by (integer) code
+    url <- paste("https://fortress.wa.gov/agr/gis/wsdagis/rest/services/NRAS/",
+                 "2014CropDistribution/MapServer/1?f=pjson", sep="")
+    fields <- fromJSON(content(GET(url)))
+    fieldCodes <- adply(lapply(fields[['fields']][[3]]$domain$codedValues, 
+                               FUN=function(x) data.frame(name=x$name, 
+                                                          code=x$code)), 1)[,-1]
+    write.csv(fieldCodes, "field_codes.csv", quote=FALSE, row.names=FALSE)
+    
+    # Get crop data
+    cropTypeCode <- fieldCodes[fieldCodes$name==cropType, 'code']
     url <- paste("https://fortress.wa.gov/agr/gis/wsdagis/rest/services/NRAS/",
                  "2014CropDistribution/MapServer/1/query?",
-                 "where=CropType+%3D+1501&outFields=TRS%2C+ExactAcres&f=pjson",
+                 "where=CropType+%3D+", cropTypeCode, 
+                 "&outFields=TRS%2C+ExactAcres&f=pjson",
                  sep="")
     
     # Fetch JSON data and import it into a data frame
@@ -149,6 +165,7 @@ getCropLatLong <- function(dataRow) {
     
     # Return only the original values if unable to geocode
     if (length(latlong) > 0 && is.na(latlong) == TRUE) {
+        print(paste("Can't geocode", dataRow$trscode, "!"))
         return(data.frame(acres=dataRow$acres, trscode=dataRow$trscode,
                           row.names=NULL))
     }
@@ -178,7 +195,7 @@ if (! file.exists(processed_file)) {
     }
 
     # Geocode crop data; .margins=1 means "split up by rows".
-    GeocodedData <- adply(.data=cropData, .margins=1, .fun=getCropLatLong)
+    GeocodedData <- adply(.data=cropData[1,], .margins=1, .fun=getCropLatLong)
     
     # Remove incomplete cases (those cases containing NAs)
     GeocodedData <- GeocodedData[complete.cases(GeocodedData),]
@@ -240,11 +257,13 @@ g <- wa_base + theme_bw() + ditch_the_axes +
               aes(long, lat, label=subregion, group=subregion)) +
      scale_fill_gradientn(colours=rev(rainbow(7)),
                         breaks=c(2, 4, 10, 100, 1000, 10000),
-                        trans="log10", name="Acres of\nAlfalfa\nSeed\n(2014)") +
+                        trans="log10", name=paste("Acres of", 
+                                                  cropType, sep="\n")) +
      geom_polygon(color="darkgrey", fill=NA) +
      coord_fixed(xlim=c(min.lon, max.lon), ylim=c(min.lat, max.lat),
                 ratio=1.5) + 
-     ggtitle("Alfalfa Seed Crop\nAcres per Township Section\n(WSDA, 2014)\n")
+     ggtitle(paste(cropType, 
+                   "Crop\nAcres per Township Section\n(WSDA, 2014)\n"))
 
 plot(g)
 
