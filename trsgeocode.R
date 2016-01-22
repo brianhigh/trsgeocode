@@ -13,6 +13,7 @@
 # * Importing data in XML format
 # * Decoding HTML-encoded text
 # * Using regular expressions for pattern matching and string replacement
+# * Calculating a map zoom level from point coordinates
 # * Mapping with ggplot2
 # * Caching data in files to avoid redoing slower steps if re-running script
 #
