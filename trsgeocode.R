@@ -22,7 +22,7 @@
 rm(list=ls())
 
 # Initialize variables
-cropType <- "Alfalfa Seed"
+cropType <- "Alfalfa Seed"  # If you change this, remove cached output files.
 
 ## Install packages and load into memory
 for (pkg in c("RJSONIO", "XML", "httr", "plyr", "dplyr", 
@@ -68,9 +68,9 @@ getData <- function(data_file) {
     jsonContent <- content(json, "text")
     write(jsonContent, "crop.json")
     
-    cropData <- fromJSON(jsonContent)
-    cropFeatures <- cropData[['features']]
-    crop <- data.frame(adply(lapply(cropFeatures, function(x) {
+    cropDataFromJSON <- fromJSON(jsonContent)
+    cropFeatures <- cropDataFromJSON[['features']]
+    cropDF <- data.frame(adply(lapply(cropFeatures, function(x) {
         data.frame(acres=x$attributes$ExactAcres, trscode=x$attributes$TRS,
                    stringsAsFactors=FALSE)}), 1)[-1])
     
@@ -79,12 +79,12 @@ getData <- function(data_file) {
     # as provided by Anika Larsen (orig. from Perry Beale via Eddie Kasner).
     # This is to confirm that this procedure produces the same results.
     options(digits=12)
-    cropGrouped <- group_by(crop, trscode)
-    Data <- summarise(cropGrouped, 
+    cropGrouped <- group_by(cropDF, trscode)
+    cropSummarised <- summarise(cropGrouped, 
                              "acres"=signif(sum(acres), 10))
-    Data <- arrange(Data, trscode)
-    write.csv(Data, data_file, quote=FALSE, row.names=FALSE)
-    return(Data)
+    cropArranged <- arrange(cropSummarised, trscode)
+    write.csv(cropArranged, data_file, quote=FALSE, row.names=FALSE)
+    return(cropArranged)
 }
 
 ## Function html2txt decodes HTML-encoded strings
@@ -189,7 +189,7 @@ if (! file.exists(processed_file)) {
     # Read in summarized crop data
     data_file <- "DataFromREST.csv"
     if (! file.exists(data_file)) {
-        cropData <- getData(data_file)
+        cropData <- as.data.frame(getData(data_file))
     } else {
         cropData <- read.csv(data_file, stringsAsFactors=FALSE, header=TRUE)
     }
