@@ -21,10 +21,17 @@
 # Clear R's workspace memory to start with a fresh workspace.
 rm(list=ls())
 
-# Initialize variables
-cropType <- "Alfalfa Seed"  # If you change this, remove cached output files.
+# ----------------------------------------------------------------------
+# Configuration
+# ----------------------------------------------------------------------
 
-## Install packages and load into memory
+cropType <- "Alfalfa Seed"  # If you change this, set use.cache to FALSE.
+use.cache <- TRUE           # Recreate data files even if they aready exist.
+
+# ----------------------------------------------------------------------
+# Package Installation
+# ----------------------------------------------------------------------
+
 for (pkg in c("RJSONIO", "XML", "httr", "plyr", "dplyr", 
               "maps", "mapdata", "ggplot2")) {
     if(pkg %in% rownames(installed.packages()) == FALSE) {
@@ -40,11 +47,8 @@ for (pkg in c("RJSONIO", "XML", "httr", "plyr", "dplyr",
 # Function Definitions
 # ----------------------------------------------------------------------
 
-## Function getData fetches the JSON data from the REST service
-getData <- function(data_file) {
-    # Get crop data from WSDA 2014 ArcGIS REST service.
-    # Note: This data is shown on this map: http://arcg.is/1QhDoo2
-    
+## Function getFieldCodes
+getFieldCodes <- function(field_codes_file) {
     # Get 2014 Crop Distribution CropType codes (for reference), since
     # you can't search by CropType name, but only by (integer) code
     url <- paste("https://fortress.wa.gov/agr/gis/wsdagis/rest/services/NRAS/",
@@ -53,7 +57,23 @@ getData <- function(data_file) {
     fieldCodes <- adply(lapply(fields[['fields']][[3]]$domain$codedValues, 
                                FUN=function(x) data.frame(name=x$name, 
                                                           code=x$code)), 1)[,-1]
-    write.csv(fieldCodes, "field_codes.csv", quote=FALSE, row.names=FALSE)
+    write.csv(fieldCodes, field_codes_file, quote=FALSE, row.names=FALSE)
+    return(fieldCodes)
+}
+
+## Function getData fetches the JSON data from the REST service
+getData <- function(data_file) {
+    # Get crop data from WSDA 2014 ArcGIS REST service.
+    # Note: This data is shown on this map: http://arcg.is/1QhDoo2
+    
+    # Get dataframe with integer code values for CropType field names
+    field_codes_file <- "field_codes.csv"
+    if (use.cache == TRUE & file.exists(data_file)) {
+        fieldCodes <- read.csv(field_codes_file, stringsAsFactors=FALSE, 
+                               header=TRUE)
+    } else {
+        fieldCodes <- getFieldCodes(field_codes_file)
+    }
     
     # Get crop data
     cropTypeCode <- fieldCodes[fieldCodes$name==cropType, 'code']
@@ -66,7 +86,9 @@ getData <- function(data_file) {
     # Fetch JSON data and import it into a data frame
     json <- GET(url)
     jsonContent <- content(json, "text")
-    write(jsonContent, "crop.json")
+    
+    # Uncomment if you would like to save this.
+    #write(jsonContent, "crop.json")
     
     cropDataFromJSON <- fromJSON(jsonContent)
     cropFeatures <- cropDataFromJSON[['features']]
@@ -185,15 +207,19 @@ getCropLatLong <- function(dataRow) {
 # Read crop data from a CSV, if present
 processed_file <- "GeocodedDataFromREST.csv"
 
-if (! file.exists(processed_file)) {
+if (use.cache == TRUE & file.exists(processed_file)) {
+    # Read in CSV containing the geocoded crop data
+    GeocodedData <- read.csv(processed_file)
+} else {
     # Read in summarized crop data
     data_file <- "DataFromREST.csv"
-    if (! file.exists(data_file)) {
-        cropData <- as.data.frame(getData(data_file))
-    } else {
+    if (use.cache == TRUE & file.exists(data_file)) {
         cropData <- read.csv(data_file, stringsAsFactors=FALSE, header=TRUE)
+        
+    } else {
+        cropData <- as.data.frame(getData(data_file))
     }
-
+    
     # Geocode crop data; .margins=1 means "split up by rows".
     GeocodedData <- adply(.data=cropData, .margins=1, .fun=getCropLatLong)
     
@@ -202,9 +228,6 @@ if (! file.exists(processed_file)) {
     
     # Save as CSV for later use
     write.csv(GeocodedData, processed_file, row.names=FALSE)
-} else {
-    # Read in CSV containing the geocoded crop data
-    GeocodedData <- read.csv(processed_file)
 }
 
 # Group by trscode for mapping
@@ -218,15 +241,17 @@ ditch_the_axes <- theme(
     axis.ticks = element_blank(),
     panel.border = element_blank(),
     panel.grid = element_blank(),
-    axis.title = element_blank()
+    axis.title = element_blank(),
+    panel.background = element_rect(fill = 'black')
 )
+
 
 # Get the base map of Washington State
 states <- map_data("state")
 wa_df <- subset(states, region == "washington")
 wa_base <- ggplot(data=wa_df,
                   mapping = aes(x=long, y=lat, group=group)) + 
-                  geom_polygon(color="darkgrey", fill="white")
+                  geom_polygon(color="darkgrey", fill="darkgreen")
 
 # Get county coordinates for Washington State
 counties <- map_data("county")
