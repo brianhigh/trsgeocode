@@ -162,7 +162,6 @@ getLatLong <- function(trscode) {
     baseurl <-
         'http://www.geocommunicator.gov/TownshipGeoCoder/TownshipGeoCoder.asmx/'
     url <- URLencode(paste(baseurl, "GetLatLon?TRS=", blmcode, sep=""))
-    response <- try(GET(url), silent=TRUE)
     response <- tryCatch(GET(url), HTTPError = function(e) {
         cat("HTTP error: ", e$message, "\n")})
     
