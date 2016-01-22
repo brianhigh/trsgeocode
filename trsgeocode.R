@@ -241,7 +241,7 @@ ditch_the_axes <- theme(
     panel.border = element_blank(),
     panel.grid = element_blank(),
     axis.title = element_blank(),
-    panel.background = element_rect(fill = 'black')
+    panel.background = element_rect(fill = "#999999")
 )
 
 
@@ -250,7 +250,7 @@ states <- map_data("state")
 wa_df <- subset(states, region == "washington")
 wa_base <- ggplot(data=wa_df,
                   mapping = aes(x=long, y=lat, group=group)) + 
-                  geom_polygon(color="darkgrey", fill="darkgreen")
+                  geom_polygon(color="white", fill="#666666")
 
 # Get county coordinates for Washington State
 counties <- map_data("county")
@@ -273,11 +273,11 @@ min.lon <- min.lon - ((max.lon - min.lon) / 4)
 
 # Plot the map, zooming in on township sections, with county names
 g <- wa_base + theme_bw() + ditch_the_axes + 
-     geom_polygon(data = wa_county, fill=NA, color="grey") +
+     geom_polygon(data = wa_county, fill=NA, color="white") +
      geom_polygon(data = GeocodedData,
                  aes(x=polygon.lon, y=polygon.lat, 
                      group=trscode, fill=acres)) +
-     geom_text(data=cnames, size=4, color="darkgrey",
+     geom_text(data=cnames, size=4, color="white",
               aes(long, lat, label=subregion, group=subregion)) +
      scale_fill_gradientn(colours=rev(rainbow(7)),
                         breaks=c(2, 4, 10, 100, 1000, 10000),
@@ -287,7 +287,8 @@ g <- wa_base + theme_bw() + ditch_the_axes +
      coord_fixed(xlim=c(min.lon, max.lon), ylim=c(min.lat, max.lat),
                 ratio=1.5) + 
      ggtitle(paste(cropType, 
-                   "Crop\nAcres per Township Section\n(WSDA, 2014)\n"))
+                   "Crop\nAcres per Township Section\n",
+                   "in Washington State (WSDA, 2014)\n"))
 
 plot(g)
 
