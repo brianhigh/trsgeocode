@@ -23,4 +23,5 @@ This script serves as an example of using the following techniques:
 
 Data source information: 
 
-https://fortress.wa.gov/agr/gis/wsdagis/rest/services/NRAS/2014CropDistribution/MapServer/info/iteminfo
+* https://fortress.wa.gov/agr/gis/wsdagis/rest/services/NRAS/2014CropDistribution/MapServer/info/iteminfo
+* http://www.geocommunicator.gov/GeoComm/services.htm#Data
