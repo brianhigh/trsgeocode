@@ -47,7 +47,7 @@ getAlfalfaData <- function(data_file) {
                  sep="")
     
     # Fetch JSON data and import it into a data frame
-    jsonAlf <-fromJSON(url)
+    jsonAlf <- fromJSON(content(GET(url), "text"))
     featuresAlf <- jsonAlf[['features']]
     alf <- data.frame(adply(lapply(featuresAlf, function(x) {
         data.frame(acres=x$attributes$ExactAcres, trscode=x$attributes$TRS,
