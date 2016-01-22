@@ -4,10 +4,11 @@ Geocode Washington State crop data given a crop type and township
 section TRS codes and plot a map showing acres of a crop type per
 township section. 
 
-Copyright 2016 Brian High (https://github.com/brianhigh) and
-Anika Larsen
+## Copyright and License
 
-License: GNU GPL v3 http://www.gnu.org/licenses/gpl.txt
+Copyright 2016 [Brian High](https://github.com/brianhigh) and Anika Larsen
+
+License: [GNU GPL v3](http://www.gnu.org/licenses/gpl.txt)
 
 ## Techniques
 
@@ -22,14 +23,17 @@ This script serves as an example of using the following techniques:
 * Using regular expressions for pattern matching and string replacement
 * Calculating a map zoom level from point coordinates
 * Mapping with ggplot2
-* Caching data in files to avoid redoing slower steps if re-running script
+* Caching data in files to avoid redoing slower steps if re-running the script
 
 ## Data Sources
 
-Data source information: 
+Crop information was obtained from: 
 
-* https://fortress.wa.gov/agr/gis/wsdagis/rest/services/NRAS/2014CropDistribution/MapServer/info/iteminfo
-* http://www.geocommunicator.gov/GeoComm/services.htm#Data
+* [2014 WSDA Crop Locations, Washington State Department of Agriculture](https://fortress.wa.gov/agr/gis/wsdagis/rest/services/NRAS/2014CropDistribution/MapServer/info/iteminfo)
+
+Geolocation information was obtained from:
+
+* [GeoCommunicator, U.S. Bureau of Land Management (BLM)](http://www.geocommunicator.gov/GeoComm/services.htm#Data)
 
 ## Sample Plot
 

@@ -26,8 +26,12 @@ rm(list=ls())
 # Configuration
 # ----------------------------------------------------------------------
 
-cropType <- "Alfalfa Seed"  # If you change this, set use.cache to FALSE.
-use.cache <- TRUE           # Recreate data files even if they aready exist.
+# Select the crop type to plot. If you change this, set use.cache to FALSE.
+# (Available crop type names may be found in field_codes.csv.)
+cropType <- "Alfalfa Seed"
+
+# Use data file cache (TRUE) or recreate files even if they exist (FALSE).
+use.cache <- TRUE
 
 # ----------------------------------------------------------------------
 # Package Installation
