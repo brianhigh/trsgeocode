@@ -9,6 +9,8 @@ Anika Larsen
 
 License: GNU GPL v3 http://www.gnu.org/licenses/gpl.txt
 
+## Techniques
+
 This script serves as an example of using the following techniques:
 
 * Querying an ArcGIS REST API using SQL-like syntax
@@ -22,7 +24,16 @@ This script serves as an example of using the following techniques:
 * Mapping with ggplot2
 * Caching data in files to avoid redoing slower steps if re-running script
 
+## Data Sources
+
 Data source information: 
 
 * https://fortress.wa.gov/agr/gis/wsdagis/rest/services/NRAS/2014CropDistribution/MapServer/info/iteminfo
 * http://www.geocommunicator.gov/GeoComm/services.htm#Data
+
+## Sample Plot
+
+This map was produced by [trsgeocode.R](trsgeocode.R) using "Alfalfa Seed" as
+the `cropType`.
+
+![Alfalfa Seed](alfalfa.png)
