@@ -1,7 +1,7 @@
 # trsgeocode
 
-Geocode Washington State alfalfa seed crop data given township
-section TRS codes and plot a map showing acres of alfalfa per
+Geocode Washington State crop data given a crop type and township
+section TRS codes and plot a map showing acres of a crop type per
 township section. 
 
 Copyright 2016 Brian High (https://github.com/brianhigh) and
