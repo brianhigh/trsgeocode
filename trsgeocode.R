@@ -28,6 +28,8 @@ rm(list=ls())
 
 # Select the crop type to plot. If you change this, set use.cache to FALSE.
 # (Available crop type names may be found in field_codes.csv.)
+# Note: If there are more than about 500 township sections to geocode, 
+# then geocoding is likely to fail with an error. (Need a work-around.)
 cropType <- "Alfalfa Seed"
 
 # Use data file cache (TRUE) or recreate files even if they exist (FALSE).
@@ -160,11 +162,14 @@ getLatLong <- function(trscode) {
     baseurl <-
         'http://www.geocommunicator.gov/TownshipGeoCoder/TownshipGeoCoder.asmx/'
     url <- URLencode(paste(baseurl, "GetLatLon?TRS=", blmcode, sep=""))
-    response <- GET(url)
+    response <- try(GET(url), silent=TRUE)
+    response <- tryCatch(GET(url), HTTPError = function(e) {
+        cat("HTTP error: ", e$message, "\n")})
     
     # Parse the XML output into a list structure
     doc <- xmlTreeParse(response, asText=TRUE)
     result <- doc[[1]]$children$TownshipGeocoderResult
+    if (is.null(result) == TRUE) return(NA)
     
     # Decode HTML-encoded strings
     decoded <- unlist(html2txt(result))
@@ -189,7 +194,7 @@ getCropLatLong <- function(dataRow) {
     latlong <- getLatLong(dataRow$trscode)
     
     # Return only the original values if unable to geocode
-    if (length(latlong) > 0 && is.na(latlong) == TRUE) {
+    if (length(latlong) || length(latlong) > 0 && is.na(latlong) == TRUE) {
         print(paste("Can't geocode", dataRow$trscode, "!"))
         return(data.frame(acres=dataRow$acres, trscode=dataRow$trscode,
                           row.names=NULL))
