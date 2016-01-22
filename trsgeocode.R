@@ -195,7 +195,7 @@ if (! file.exists(processed_file)) {
     }
 
     # Geocode crop data; .margins=1 means "split up by rows".
-    GeocodedData <- adply(.data=cropData[1,], .margins=1, .fun=getCropLatLong)
+    GeocodedData <- adply(.data=cropData, .margins=1, .fun=getCropLatLong)
     
     # Remove incomplete cases (those cases containing NAs)
     GeocodedData <- GeocodedData[complete.cases(GeocodedData),]
