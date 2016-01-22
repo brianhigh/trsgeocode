@@ -1,0 +1,2062 @@
+{
+ "displayFieldName": "CropType",
+ "fieldAliases": {
+  "TRS": "TRS",
+  "ExactAcres": "ExactAcres"
+ },
+ "fields": [
+  {
+   "name": "TRS",
+   "type": "esriFieldTypeString",
+   "alias": "TRS",
+   "length": 15
+  },
+  {
+   "name": "ExactAcres",
+   "type": "esriFieldTypeDouble",
+   "alias": "ExactAcres"
+  }
+ ],
+ "features": [
+  {
+   "attributes": {
+    "TRS": "T19R29E35",
+    "ExactAcres": 10.067646716200001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T20R29E19",
+    "ExactAcres": 135.528565066
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E21",
+    "ExactAcres": 27.652503459399998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T17R30E7",
+    "ExactAcres": 5.9238141865599996
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E6",
+    "ExactAcres": 55.8057708686
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T10R28E1",
+    "ExactAcres": 19.388300879700001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R29E12",
+    "ExactAcres": 74.749320514000004
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E21",
+    "ExactAcres": 127.07317238500001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R29E12",
+    "ExactAcres": 8.6996250659500003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T17R30E9",
+    "ExactAcres": 9.4067710384099996
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E20",
+    "ExactAcres": 11.2308320243
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T17R30E1",
+    "ExactAcres": 94.787020324599993
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E10",
+    "ExactAcres": 33.129340042499997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E22",
+    "ExactAcres": 52.684566890399999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R29E2",
+    "ExactAcres": 143.067233004
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E13",
+    "ExactAcres": 49.4844178337
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T17R30E7",
+    "ExactAcres": 8.3356888997900001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T17R30E7",
+    "ExactAcres": 53.4941713937
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T17R30E18",
+    "ExactAcres": 30.1247289493
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E11",
+    "ExactAcres": 13.838412655100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E17",
+    "ExactAcres": 98.318238704400002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E2",
+    "ExactAcres": 20.169013007699998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R29E11",
+    "ExactAcres": 41.321866784500003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E11",
+    "ExactAcres": 41.291102074400001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E5",
+    "ExactAcres": 37.116322086399997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R29E17",
+    "ExactAcres": 12.9651878562
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T19R30E36",
+    "ExactAcres": 150.91717603399999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T17R30E7",
+    "ExactAcres": 45.752445826900001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E3",
+    "ExactAcres": 5.5601165426100003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T17R30E5",
+    "ExactAcres": 20.025557992900001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T19R29E35",
+    "ExactAcres": 11.911820584299999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R28E26",
+    "ExactAcres": 22.7136625833
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R30E10",
+    "ExactAcres": 14.868402337199999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R29E12",
+    "ExactAcres": 9.9921867773000006
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T18R29E17",
+    "ExactAcres": 36.343760193400001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E12",
+    "ExactAcres": 57.227611206299997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E14",
+    "ExactAcres": 11.0356456807
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E8",
+    "ExactAcres": 141.902150428
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E13",
+    "ExactAcres": 4.3656765604699999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E2",
+    "ExactAcres": 16.668231473900001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E25",
+    "ExactAcres": 31.6388619865
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E5",
+    "ExactAcres": 38.345535198100002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E32",
+    "ExactAcres": 2.19732548071
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E5",
+    "ExactAcres": 83.213656181299996
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E38",
+    "ExactAcres": 29.092329567899998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E22",
+    "ExactAcres": 41.768450189299998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E24",
+    "ExactAcres": 30.0611918508
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E28",
+    "ExactAcres": 6.4898284733500002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E4",
+    "ExactAcres": 117.234171839
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E13",
+    "ExactAcres": 47.644676150199999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E8",
+    "ExactAcres": 7.8025511304200004
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E11",
+    "ExactAcres": 61.845234603100003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E14",
+    "ExactAcres": 37.763382280099997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E5",
+    "ExactAcres": 36.899507837900003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E10",
+    "ExactAcres": 133.21363298599999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E25",
+    "ExactAcres": 56.557810284399999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E4",
+    "ExactAcres": 55.077078990300002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E4",
+    "ExactAcres": 36.356796875299999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E4",
+    "ExactAcres": 24.285789084499999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E9",
+    "ExactAcres": 158.71400919999999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E12",
+    "ExactAcres": 53.2385200756
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E28",
+    "ExactAcres": 18.600619228999999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E5",
+    "ExactAcres": 58.421813920799998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E4",
+    "ExactAcres": 33.215133269799999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E6",
+    "ExactAcres": 76.591922597299998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E1",
+    "ExactAcres": 27.060445837100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 23.908755440099998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E1",
+    "ExactAcres": 9.3102051325299993
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E32",
+    "ExactAcres": 25.4711753188
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E29",
+    "ExactAcres": 60.406523498699997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E21",
+    "ExactAcres": 3.1966502249099999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E32",
+    "ExactAcres": 27.640276486099999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E6",
+    "ExactAcres": 76.457973659299995
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E31",
+    "ExactAcres": 14.614387325799999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E35",
+    "ExactAcres": 40.7417705437
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E24",
+    "ExactAcres": 135.43803121100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E12",
+    "ExactAcres": 69.919484295299995
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E30",
+    "ExactAcres": 5.3102273985200004
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E15",
+    "ExactAcres": 4.7511441636800003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E18",
+    "ExactAcres": 35.894506807500001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R35E7",
+    "ExactAcres": 3.67260946092
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R35E7",
+    "ExactAcres": 9.4409345600000005
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E28",
+    "ExactAcres": 55.289221639300003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E1",
+    "ExactAcres": 29.1097700487
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E21",
+    "ExactAcres": 61.2181990861
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E29",
+    "ExactAcres": 67.087778149100004
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E35",
+    "ExactAcres": 44.205100898300003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E20",
+    "ExactAcres": 141.09470762500001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E35",
+    "ExactAcres": 26.538047832
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E12",
+    "ExactAcres": 40.789567448100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E5",
+    "ExactAcres": 9.3483420121599998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E35",
+    "ExactAcres": 31.448318603699999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E4",
+    "ExactAcres": 27.675493811599999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E1",
+    "ExactAcres": 12.8915017367
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E33",
+    "ExactAcres": 10.4753346181
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 5.0957996740100002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E38",
+    "ExactAcres": 23.819219839599999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E26",
+    "ExactAcres": 39.3775897417
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E31",
+    "ExactAcres": 115.84364503899999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E14",
+    "ExactAcres": 3.5199819950100002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E30",
+    "ExactAcres": 35.993262078999997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E30",
+    "ExactAcres": 1.2230592178699999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E22",
+    "ExactAcres": 30.832760684899998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E25",
+    "ExactAcres": 53.230444057299998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E26",
+    "ExactAcres": 33.911977061899996
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E14",
+    "ExactAcres": 0.75180501120499998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E35",
+    "ExactAcres": 23.568849758799999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E9",
+    "ExactAcres": 4.6879700953299999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E9",
+    "ExactAcres": 8.2056978008999995
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E8",
+    "ExactAcres": 15.856914378400001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E16",
+    "ExactAcres": 25.6813243002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E38",
+    "ExactAcres": 1.3293271450799999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E14",
+    "ExactAcres": 9.2941322568700002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E11",
+    "ExactAcres": 32.454567290900002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 29.2516776107
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E30",
+    "ExactAcres": 15.528701614899999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E4",
+    "ExactAcres": 40.412120214600002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E31",
+    "ExactAcres": 140.767063355
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E6",
+    "ExactAcres": 78.559598439799998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E1",
+    "ExactAcres": 39.008907279900001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E33",
+    "ExactAcres": 34.180207414000002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E8",
+    "ExactAcres": 17.318116311099999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E2",
+    "ExactAcres": 14.3791674696
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E2",
+    "ExactAcres": 66.389887893299999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E11",
+    "ExactAcres": 61.4706704452
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 20.672126823900001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 14.668400420899999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E29",
+    "ExactAcres": 57.251009695299999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 23.735134738599999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E28",
+    "ExactAcres": 9.1570143793799996
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E8",
+    "ExactAcres": 49.185596371400003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E5",
+    "ExactAcres": 49.337203004599999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E8",
+    "ExactAcres": 41.659271926899997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R32E1",
+    "ExactAcres": 131.043961537
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R32E1",
+    "ExactAcres": 182.11418298800001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E26",
+    "ExactAcres": 52.825447156400003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E34",
+    "ExactAcres": 18.151971521499998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E29",
+    "ExactAcres": 46.538873515100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 46.089339951299998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E5",
+    "ExactAcres": 70.804088376699994
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E23",
+    "ExactAcres": 1.3157830688100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E2",
+    "ExactAcres": 39.855158385199999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E28",
+    "ExactAcres": 1.13784118619
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E6",
+    "ExactAcres": 110.768776206
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E13",
+    "ExactAcres": 11.0841646451
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 23.4171256588
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E14",
+    "ExactAcres": 32.358318203700001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 20.321267183700002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E18",
+    "ExactAcres": 39.466471449899998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E9",
+    "ExactAcres": 42.594635340300002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E8",
+    "ExactAcres": 6.4454900200800003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E7",
+    "ExactAcres": 21.8517179816
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E29",
+    "ExactAcres": 17.5596438428
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E2",
+    "ExactAcres": 23.798965465399998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 30.729451679299999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E12",
+    "ExactAcres": 47.570130049200003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E29",
+    "ExactAcres": 27.744674483099999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E2",
+    "ExactAcres": 35.307481316800001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E5",
+    "ExactAcres": 33.365117722100003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E29",
+    "ExactAcres": 1.66195984619
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E30",
+    "ExactAcres": 5.4420935545600004
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E12",
+    "ExactAcres": 0.65266450324900005
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E32",
+    "ExactAcres": 12.1908215153
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E21",
+    "ExactAcres": 42.767150010599998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 47.312670775699999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E32",
+    "ExactAcres": 156.22294362400001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E2",
+    "ExactAcres": 23.4913105075
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 30.2306268932
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E4",
+    "ExactAcres": 28.503414510399999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E11",
+    "ExactAcres": 79.543253528299999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E38",
+    "ExactAcres": 8.5059790693499995
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E26",
+    "ExactAcres": 36.809372644900002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E12",
+    "ExactAcres": 10.4322812375
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 23.6689058129
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 14.021246618699999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 10.263879149099999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E11",
+    "ExactAcres": 24.459305376900002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E13",
+    "ExactAcres": 27.1790047157
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 28.396137599100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E23",
+    "ExactAcres": 39.866004241399999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E23",
+    "ExactAcres": 149.024533284
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E32",
+    "ExactAcres": 4.0235738121800004
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E8",
+    "ExactAcres": 52.9025190471
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E21",
+    "ExactAcres": 124.13864019
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 27.866208539599999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E5",
+    "ExactAcres": 36.6426279135
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E24",
+    "ExactAcres": 242.128182329
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E28",
+    "ExactAcres": 57.427378633799997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E31",
+    "ExactAcres": 6.0229632173700001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E5",
+    "ExactAcres": 33.064268245400001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E5",
+    "ExactAcres": 112.02346446599999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E27",
+    "ExactAcres": 68.860138609499998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E20",
+    "ExactAcres": 55.905598150400003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E13",
+    "ExactAcres": 16.684647935899999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E24",
+    "ExactAcres": 7.8616062391800003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 11.8154806335
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E11",
+    "ExactAcres": 17.499643800000001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E11",
+    "ExactAcres": 86.6225357557
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E34",
+    "ExactAcres": 28.988872872999998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E34",
+    "ExactAcres": 17.9820074175
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E5",
+    "ExactAcres": 18.717161411300001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E2",
+    "ExactAcres": 41.832392992700001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E22",
+    "ExactAcres": 13.473207221699999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E29",
+    "ExactAcres": 6.4628907874100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E24",
+    "ExactAcres": 127.111705254
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E24",
+    "ExactAcres": 67.286080833599996
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E11",
+    "ExactAcres": 19.048331457
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E33",
+    "ExactAcres": 73.773422763799999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E29",
+    "ExactAcres": 5.3624432539400004
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E4",
+    "ExactAcres": 25.969111100500001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 17.062076381400001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E35",
+    "ExactAcres": 10.097464094499999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E10",
+    "ExactAcres": 3.7626246405699999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 115.21279428
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E6",
+    "ExactAcres": 50.543197001599999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 13.878471931
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 9.57073187596
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E25",
+    "ExactAcres": 18.982764833699999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E6",
+    "ExactAcres": 21.455994401000002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E38",
+    "ExactAcres": 106.873718383
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E22",
+    "ExactAcres": 131.72750067699999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R32E36",
+    "ExactAcres": 133.29776108499999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E3",
+    "ExactAcres": 5.1180610257600003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 73.699371419399995
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E11",
+    "ExactAcres": 47.851720974000003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T11R17E4",
+    "ExactAcres": 60.323229144000003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E23",
+    "ExactAcres": 158.67930669399999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E38",
+    "ExactAcres": 23.990691429999998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E28",
+    "ExactAcres": 10.200395116299999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E16",
+    "ExactAcres": 23.294556447800002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E3",
+    "ExactAcres": 13.3771421838
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E5",
+    "ExactAcres": 1.31046493248
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E31",
+    "ExactAcres": 7.4943773737099999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E13",
+    "ExactAcres": 62.1858448686
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E8",
+    "ExactAcres": 18.268462956800001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 35.143439935499998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E24",
+    "ExactAcres": 6.5601717114799998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E10",
+    "ExactAcres": 158.56050723199999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E6",
+    "ExactAcres": 21.3503558158
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E8",
+    "ExactAcres": 24.1630214206
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 36.235556460300003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 48.269263915499998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E35",
+    "ExactAcres": 61.912047153700001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E26",
+    "ExactAcres": 118.622263031
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E35",
+    "ExactAcres": 18.971030797000001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E14",
+    "ExactAcres": 134.23920764299999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 48.098124773099997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E2",
+    "ExactAcres": 13.456626572199999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E2",
+    "ExactAcres": 17.7484493171
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 60.673242584599997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E8",
+    "ExactAcres": 136.58846762799999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E17",
+    "ExactAcres": 46.298659735900003
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 27.377067468500002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 12.218798360599999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E31",
+    "ExactAcres": 50.700469736300001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E31",
+    "ExactAcres": 16.223368708100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E24",
+    "ExactAcres": 18.4457113462
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E31",
+    "ExactAcres": 128.149676529
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E14",
+    "ExactAcres": 26.675051960200001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E15",
+    "ExactAcres": 1.7107294506699999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E15",
+    "ExactAcres": 24.122639659200001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R35E18",
+    "ExactAcres": 37.715176179099998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E25",
+    "ExactAcres": 103.88044325
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E11",
+    "ExactAcres": 48.335195622299999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E4",
+    "ExactAcres": 40.569237678900002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E13",
+    "ExactAcres": 45.742508248500002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E13",
+    "ExactAcres": 116.811506028
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E11",
+    "ExactAcres": 28.569541138799998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 8.8875034658400001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E21",
+    "ExactAcres": 165.95357538499999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 21.070870737100002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E16",
+    "ExactAcres": 8.7610321358699998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E18",
+    "ExactAcres": 11.9185772732
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E4",
+    "ExactAcres": 65.319814023299998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E5",
+    "ExactAcres": 58.991030327799997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E5",
+    "ExactAcres": 27.465542582099999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E12",
+    "ExactAcres": 55.3400590476
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 9.5835419186100008
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E5",
+    "ExactAcres": 19.1394284625
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 10.1879129355
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E15",
+    "ExactAcres": 1.3306464601100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E12",
+    "ExactAcres": 30.0571192578
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E35",
+    "ExactAcres": 20.214807840999999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E25",
+    "ExactAcres": 65.681000191600006
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E9",
+    "ExactAcres": 110.27231381999999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E14",
+    "ExactAcres": 8.2949287354300001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E15",
+    "ExactAcres": 10.590298196399999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E33",
+    "ExactAcres": 3.30337775983
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E9",
+    "ExactAcres": 152.05457546700001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T11R17E17",
+    "ExactAcres": 77.771012764700004
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E4",
+    "ExactAcres": 8.11796865152
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E9",
+    "ExactAcres": 146.09176636000001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E9",
+    "ExactAcres": 154.12479634799999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E3",
+    "ExactAcres": 26.386532124999999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T11R17E16",
+    "ExactAcres": 101.861576692
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E24",
+    "ExactAcres": 6.6557367396
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E18",
+    "ExactAcres": 19.888909120899999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E21",
+    "ExactAcres": 59.311392916700001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E14",
+    "ExactAcres": 17.851989532600001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E5",
+    "ExactAcres": 34.136849279300002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 18.459235000300001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E25",
+    "ExactAcres": 29.214662133000001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T11R17E9",
+    "ExactAcres": 154.989191726
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R36E8",
+    "ExactAcres": 3.2769449349399999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E1",
+    "ExactAcres": 1.2083570341100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E29",
+    "ExactAcres": 2.9077201332699998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 38.371166804600001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R32E21",
+    "ExactAcres": 16.993653677099999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E23",
+    "ExactAcres": 71.764505618599998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E22",
+    "ExactAcres": 34.952732309300004
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R32E1",
+    "ExactAcres": 63.106242659999999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E1",
+    "ExactAcres": 25.5961798198
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E11",
+    "ExactAcres": 43.440310660000002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E31",
+    "ExactAcres": 19.4905934698
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E12",
+    "ExactAcres": 1.40673707921
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T11R17E17",
+    "ExactAcres": 39.586604720499999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T11R17E16",
+    "ExactAcres": 44.705924311399997
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E6",
+    "ExactAcres": 78.446944053099998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E29",
+    "ExactAcres": 5.0470027739700001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E5",
+    "ExactAcres": 1.9369573233999999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E35",
+    "ExactAcres": 22.6674454425
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E15",
+    "ExactAcres": 1.19765530392
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E6",
+    "ExactAcres": 69.330528039000001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 1.8758980477
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E23",
+    "ExactAcres": 4.2495161470099996
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E9",
+    "ExactAcres": 26.681874727699999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E15",
+    "ExactAcres": 2.6452136228100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 1.7886138781800001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E10",
+    "ExactAcres": 2.5556797468300001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E4",
+    "ExactAcres": 26.691221379000002
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E5",
+    "ExactAcres": 24.7164463553
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E32",
+    "ExactAcres": 65.878178152499999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R33E31",
+    "ExactAcres": 8.8407590554799995
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E12",
+    "ExactAcres": 29.092387557999999
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E17",
+    "ExactAcres": 2.0077311070000001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R34E7",
+    "ExactAcres": 42.1646417077
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R32E22",
+    "ExactAcres": 29.529136583100001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E27",
+    "ExactAcres": 46.592095625500001
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T07R34E23",
+    "ExactAcres": 30.394667214999998
+   }
+  },
+  {
+   "attributes": {
+    "TRS": "T06R33E7",
+    "ExactAcres": 8.3808535944100004
+   }
+  }
+ ]
+}

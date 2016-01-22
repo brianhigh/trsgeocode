@@ -87,9 +87,7 @@ getData <- function(data_file) {
     # Fetch JSON data and import it into a data frame
     json <- GET(url)
     jsonContent <- content(json, "text")
-    
-    # Uncomment if you would like to save this.
-    #write(jsonContent, "crop.json")
+    write(jsonContent, "crop.json")
     
     cropDataFromJSON <- fromJSON(jsonContent)
     cropFeatures <- cropDataFromJSON[['features']]
