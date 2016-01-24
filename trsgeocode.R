@@ -98,6 +98,7 @@ getData <- function(data_file) {
     cropDF <- data.frame(adply(lapply(cropFeatures, function(x) {
         data.frame(acres=x$attributes$ExactAcres, trscode=x$attributes$TRS,
                    stringsAsFactors=FALSE)}), 1)[-1])
+    write.csv(cropDF, "crop.csv", quote=FALSE, row.names=FALSE)
     
     # Summarize by trscode to get total acres of chosen crop type per TRS.
     # Use 12 digits and 10 significant figures to reproduce original data set
