@@ -7,9 +7,11 @@
 # Copyright 2016 Brian High (https://github.com/brianhigh)
 # License: GNU GPL v3 http://www.gnu.org/licenses/gpl.txt
 
-install.packages("RODBC")
+#install.packages("RODBC")
 library(RODBC)
 
+# The zip link was found on this page as "Download WSDA GIS Data [ZIP 22.4 MB]":
+#     http://agr.wa.gov/pestfert/natresources/aglanduse.aspx
 url <- "http://agr.wa.gov/PestFert/NatResources/docs/2014WSDACropDistribution.zip"
 zipfile <- "2014WSDACropDistribution.zip"
 download.file(url, zipfile)
@@ -34,7 +36,7 @@ q <- "SELECT TRS,ExactAcres
 AlfalfaSeed <- sqlQuery(cropdb, q)
 
 # You could alternatively get the data in one query by using a JOIN...
-q <- "SELECT TRS,ExactAcres 
+q <- "SELECT ExactAcres AS acres, TRS AS trscode
       FROM CropData 
       INNER JOIN CropType 
           ON CropData.CropType = CropType.CropTypeID 
@@ -42,8 +44,11 @@ q <- "SELECT TRS,ExactAcres
 AlfalfaSeed <- sqlQuery(cropdb, q)
 
 # Write "Alfalfa Seed" data to file
-write.csv(AlfalfaSeed, "alfalfa.csv", row.names=F)
+write.csv(AlfalfaSeed, "alfalfa_from_mdb.csv", row.names=FALSE, quote=FALSE)
+
+# If you compare this file with crop.csv made with trsgeocode.R, you will see 
+# that they are identical. I.e., use diff or diff -w to compare them.
 
 # Get all TRS codes from database and write to file
 trscodes <- sqlQuery(cropdb, "SELECT DISTINCT(TRS) AS TRSCODE FROM CropData;")
-write.csv(trscodes, "CropData_TRSCODES.csv", row.names=F)
+write.csv(trscodes, "CropData_TRSCODES.csv", row.names=FALSE, quote=FALSE)

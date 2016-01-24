@@ -31,7 +31,7 @@ rm(list=ls())
 cropType <- "Alfalfa Seed"
 
 # Use data file cache (TRUE) or recreate files even if they exist (FALSE).
-use.cache <- TRUE
+use.cache <- FALSE
 
 # ----------------------------------------------------------------------
 # Package Installation
