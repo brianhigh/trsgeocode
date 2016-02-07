@@ -62,7 +62,7 @@ getFieldCodes <- function(field_codes_file) {
     fieldCodes <- adply(lapply(fields[['fields']][[3]]$domain$codedValues, 
                                FUN=function(x) data.frame(name=x$name, 
                                                           code=x$code)), 1)[,-1]
-    write.csv(fieldCodes, field_codes_file, quote=FALSE, row.names=FALSE)
+    write.csv(fieldCodes, field_codes_file, quote=TRUE, row.names=FALSE)
     return(fieldCodes)
 }
 

@@ -1,172 +1,172 @@
-name,code
-Alfalfa Hay,701
-Alfalfa Seed,1501
-Alfalfa/Grass Hay,703
-Alkali Bee Bed,9802
-Allium,501
-Almond,1406
-Apple,1401
-Apricot,1402
-Artichoke, Jerusalem,1801
-Asparagus,1802
-Barley,201
-Barley Hay,702
-Bean, Dry,1803
-Bean, Green,1804
-Bean Seed,1522
-Beet,1806
-Beet Seed,1502
-Berry, Unknown,198
-Blueberry,102
-Bluegrass Seed,1503
-Broccoli,1807
-Broccoli Seed,1535
-Bromegrass Seed,1504
-Brussels Sprouts,1808
-Brussels Sprouts Seed,1505
-Buckwheat,202
-Bulb, Unknown,598
-Burnet Seed,1533
-Cabbage,1809
-Cabbage Seed,1506
-Camelina,1905
-Caneberry,107
-Canola,1902
-Cantaloupe,1002
-Carrot,1810
-Carrot Seed,1507
-Cauliflower,1811
-Cauliflower Seed,1530
-Cereal Grain, Unknown,298
-Cherry,1403
-Chestnut,1404
-Chickpea,1813
-Christmas Tree,402
-Cilantro,1823
-Cilantro Seed,1525
-Clover Hay,708
-Clover/Grass Hay,709
-Clover Seed,1508
-Conifer Seed,1510
-Corn, Field,204
-Corn, Sweet,1814
-Corn Seed,1509
-Corn, Unknown,205
-Cranberry,103
-CRP/Conservation,9803
-Cucumber,1815
-Currant,104
-Daffodil,502
-Dahlia,503
-Dandelion,1833
-Developed,9804
-Dill,1901
-Driving Range,1701
-Fallow,9801
-Fescue Seed,1526
-Filbert,1405
-Flax,1903
-Flax Seed,1514
-Garlic,1817
-Golf Course,1702
-Grape, Juice,2001
-Grape, Table,2003
-Grape, Unknown,2098
-Grape, Wine,2002
-Grass Hay,713
-Grass Seed, Other,1527
-Green Manure,601
-Hay/Silage, Unknown,798
-Herb, Unknown,898
-Honeydew,1003
-Hops,806
-Iris,504
-Kale,1816
-Kiwi,108
-Leek,1818
-Lentil,1819
-Lettuce,1820
-Lettuce Seed,1511
-Market Crops,1821
-Medicinal Herb,801
-Melon, Unknown,1098
-Mint,807
-Mustard,1904
-Mustard Seed,1523
-Nectarine/Peach,1407
-Nursery, Caneberry,1312
-Nursery, Greenhouse,1306
-Nursery, Holly,1307
-Nursery, Lavender,1308
-Nursery, Lilac,1309
-Nursery, Orchard/Vineyard,1304
-Nursery, Ornamental,1311
-Nursery, Silviculture,1303
-Oat,206
-Oat Hay,705
-Onion,1822
-Onion Seed,1512
-Orchard, Unknown,1498
-Parsley,1835
-Pasture,9805
-Pea, Dry,1824
-Pea, Green,1825
-Pea Seed,1513
-Pea/Vetch,602
-Peanut,1840
-Pear,1409
-Peony,506
-Pepper,1826
-Plum,1410
-Poplar,403
-Potato,1827
-Potato Seed,1515
-Pumpkin,1828
-Radish,1839
-Radish Seed,1516
-Research Station,9807
-Rhubarb,1829
-Rosemary,808
-Rutabaga,1836
-Rutabaga Seed,1528
-Rye,207
-Rye Hay,710
-Ryegrass Seed,1517
-Safflower Seed,1518
-Sage,803
-Seed, Unknown,1598
-Shellfish,1601
-Silviculture,401
-Sod Farm,1704
-Sorghum,720
-Soybean,1907
-Spinach,1830
-Spinach Seed,1519
-Squash,1831
-Strawberry,106
-Sudangrass,721
-Sugar Beet,1832
-Sugar Beet Seed,1520
-Sunflower,1906
-Sunflower Seed,1531
-Swiss Chard Seed,1521
-Tarragon,809
-Tea,804
-Timothy,722
-Tobacco,802
-Tomato,1834
-Triticale,209
-Triticale Hay,704
-Tulip,505
-Turnip,1837
-Turnip Seed,1529
-Unknown,9898
-Vegetable, Unknown,1898
-Walnut,1411
-Watermelon,1001
-Wheat,210
-Wheat Fallow,211
-Wildlife Feed,9806
-Yarrow Seed,1532
-Yellow Mustard,603
-Yew,405
+"name","code"
+"Alfalfa Hay",701
+"Alfalfa Seed",1501
+"Alfalfa/Grass Hay",703
+"Alkali Bee Bed",9802
+"Allium",501
+"Almond",1406
+"Apple",1401
+"Apricot",1402
+"Artichoke, Jerusalem",1801
+"Asparagus",1802
+"Barley",201
+"Barley Hay",702
+"Bean, Dry",1803
+"Bean, Green",1804
+"Bean Seed",1522
+"Beet",1806
+"Beet Seed",1502
+"Berry, Unknown",198
+"Blueberry",102
+"Bluegrass Seed",1503
+"Broccoli",1807
+"Broccoli Seed",1535
+"Bromegrass Seed",1504
+"Brussels Sprouts",1808
+"Brussels Sprouts Seed",1505
+"Buckwheat",202
+"Bulb, Unknown",598
+"Burnet Seed",1533
+"Cabbage",1809
+"Cabbage Seed",1506
+"Camelina",1905
+"Caneberry",107
+"Canola",1902
+"Cantaloupe",1002
+"Carrot",1810
+"Carrot Seed",1507
+"Cauliflower",1811
+"Cauliflower Seed",1530
+"Cereal Grain, Unknown",298
+"Cherry",1403
+"Chestnut",1404
+"Chickpea",1813
+"Christmas Tree",402
+"Cilantro",1823
+"Cilantro Seed",1525
+"Clover Hay",708
+"Clover/Grass Hay",709
+"Clover Seed",1508
+"Conifer Seed",1510
+"Corn, Field",204
+"Corn, Sweet",1814
+"Corn Seed",1509
+"Corn, Unknown",205
+"Cranberry",103
+"CRP/Conservation",9803
+"Cucumber",1815
+"Currant",104
+"Daffodil",502
+"Dahlia",503
+"Dandelion",1833
+"Developed",9804
+"Dill",1901
+"Driving Range",1701
+"Fallow",9801
+"Fescue Seed",1526
+"Filbert",1405
+"Flax",1903
+"Flax Seed",1514
+"Garlic",1817
+"Golf Course",1702
+"Grape, Juice",2001
+"Grape, Table",2003
+"Grape, Unknown",2098
+"Grape, Wine",2002
+"Grass Hay",713
+"Grass Seed, Other",1527
+"Green Manure",601
+"Hay/Silage, Unknown",798
+"Herb, Unknown",898
+"Honeydew",1003
+"Hops",806
+"Iris",504
+"Kale",1816
+"Kiwi",108
+"Leek",1818
+"Lentil",1819
+"Lettuce",1820
+"Lettuce Seed",1511
+"Market Crops",1821
+"Medicinal Herb",801
+"Melon, Unknown",1098
+"Mint",807
+"Mustard",1904
+"Mustard Seed",1523
+"Nectarine/Peach",1407
+"Nursery, Caneberry",1312
+"Nursery, Greenhouse",1306
+"Nursery, Holly",1307
+"Nursery, Lavender",1308
+"Nursery, Lilac",1309
+"Nursery, Orchard/Vineyard",1304
+"Nursery, Ornamental",1311
+"Nursery, Silviculture",1303
+"Oat",206
+"Oat Hay",705
+"Onion",1822
+"Onion Seed",1512
+"Orchard, Unknown",1498
+"Parsley",1835
+"Pasture",9805
+"Pea, Dry",1824
+"Pea, Green",1825
+"Pea Seed",1513
+"Pea/Vetch",602
+"Peanut",1840
+"Pear",1409
+"Peony",506
+"Pepper",1826
+"Plum",1410
+"Poplar",403
+"Potato",1827
+"Potato Seed",1515
+"Pumpkin",1828
+"Radish",1839
+"Radish Seed",1516
+"Research Station",9807
+"Rhubarb",1829
+"Rosemary",808
+"Rutabaga",1836
+"Rutabaga Seed",1528
+"Rye",207
+"Rye Hay",710
+"Ryegrass Seed",1517
+"Safflower Seed",1518
+"Sage",803
+"Seed, Unknown",1598
+"Shellfish",1601
+"Silviculture",401
+"Sod Farm",1704
+"Sorghum",720
+"Soybean",1907
+"Spinach",1830
+"Spinach Seed",1519
+"Squash",1831
+"Strawberry",106
+"Sudangrass",721
+"Sugar Beet",1832
+"Sugar Beet Seed",1520
+"Sunflower",1906
+"Sunflower Seed",1531
+"Swiss Chard Seed",1521
+"Tarragon",809
+"Tea",804
+"Timothy",722
+"Tobacco",802
+"Tomato",1834
+"Triticale",209
+"Triticale Hay",704
+"Tulip",505
+"Turnip",1837
+"Turnip Seed",1529
+"Unknown",9898
+"Vegetable, Unknown",1898
+"Walnut",1411
+"Watermelon",1001
+"Wheat",210
+"Wheat Fallow",211
+"Wildlife Feed",9806
+"Yarrow Seed",1532
+"Yellow Mustard",603
+"Yew",405
