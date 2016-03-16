@@ -37,16 +37,16 @@ use.cache <- FALSE
 # Package Installation
 # ----------------------------------------------------------------------
 
-for (pkg in c("RJSONIO", "XML", "httr", "plyr", "dplyr", 
-              "maps", "mapdata", "ggplot2")) {
-    if(pkg %in% rownames(installed.packages()) == FALSE) {
-        install.packages(pkg, quiet = TRUE, 
-                         repos="http://cran.fhcrc.org",
-                         dependencies=TRUE)
-    }
-    suppressWarnings(suppressPackageStartupMessages(
-        require(pkg, character.only = TRUE, quietly = TRUE)))
+# Load one or more packages into memory, installing as needed.
+load.pkgs <- function(pkgs, repos = "http://cran.r-project.org") {
+    result <- sapply(pkgs, function(pkg) { 
+        if (!suppressWarnings(require(pkg, character.only = TRUE))) {
+            install.packages(pkg, quiet = TRUE, repos = repos)
+            library(pkg, character.only = TRUE)}})
 }
+
+load.pkgs(c("RJSONIO", "XML", "httr", "plyr", "dplyr", "maps", "mapdata", 
+            "ggplot2"))
 
 # ----------------------------------------------------------------------
 # Function Definitions
